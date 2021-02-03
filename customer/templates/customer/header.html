@@ -1,0 +1,53 @@
+ <!DOCTYPE html>
+  <html>
+    <head>
+      {% load static %}
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="{% static 'customer/css/materialize.min.css' %}"  media="screen,projection"/>
+
+      <link type="text/css" rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
+<!--      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/css/alertify.min.css"/>-->
+      <link type="text/css" rel="stylesheet" href="{% static 'customer/css/main.css' %}"/>
+      <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta http-equiv="Content-Type" content="text/html">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+<!--      <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.4/build/alertify.min.js"></script>-->
+
+
+
+
+
+
+    </head>
+    <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo" style="color:black">Indian Bank</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        {% if request.session.user_id %}
+
+              {% if request.session.user_type == 1 %}
+                <li><a href="/usermanagement">User Management</a></li>
+                <li><a href="/account/report">Transaction Histories</a></li>
+              {% else %}
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/account/deposit">Deposit</a></li>
+                <li><a href="/account/withdraw">Withdraw</a></li>
+                <li><a href="/account/enquiry">Enquiry</a></li>
+              {% endif %}
+              <li><a href="/logout">Logout</a></li>
+        {% else %}
+        <li><a href="/">Login</a></li>
+        {% endif %}
+      </ul>
+    </div>
+    </nav>
+
+    <body>
+      

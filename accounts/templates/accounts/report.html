@@ -1,0 +1,71 @@
+{% load static %}
+{% include 'customer/header.html' %}
+<div class="container">
+    <p><strong>{{title}}</strong></p>
+    <form  action="/account/report" method="POST">
+      <div class="row">
+        {% csrf_token %}
+        <div class="input-field col s12">
+          <input placeholder="Enter Account No" name="account" type="number" class="validate" data-dj-validator="3,20" required>
+          <label for="Enter Account No">Enter Account No</label>
+        </div>
+          <div class="input-field col s6">
+
+          <input placeholder="Start date" name="start" type="text" id="startdate" class="datepicker"  required>
+
+          <label for="start date">Enter Start date</label>
+        </div>
+          <div class="input-field col s6">
+
+          <input placeholder="End date" name="end" type="text" id="enddate"  class="datepicker"  required>
+
+          <label for="end date">Enter End date</label>
+        </div>
+
+
+      <div class="row">
+        <div class="input-field col s12">
+                  <button class="btn waves-effect wid-100" type="submit" name="action">Download report
+                  </button>
+        </div>
+      </div>
+      </div>
+    </form>
+</div>
+{% load static %}
+ <script type="text/javascript">
+<!-- datepicker-->
+$(document).ready(function(){
+  $('.datepicker').datepicker({
+        selectMonths: true, // Creates a dropdown to control month
+        closeOnSelect: true,
+        closeOnClear: true,
+        format: 'yyyy-mm-dd',
+        onSet: function (ele) {
+           if(ele.select){
+                  this.close();
+           }
+
+            var d1 = $('#startdate').val();
+            var d2 = $('#enddate').val();
+
+            var date1 = new Date(d1);
+            var date2 = new Date(d2);
+
+           var date1_ms = date1.getTime();
+           var date2_ms = date2.getTime();
+
+            if((date2_ms -date1_ms ) <0 )
+            {
+              alert('End date cannot be a previous date!');
+              $('#startdate').val(d2);
+
+            }
+
+        }
+
+      });
+
+});
+</script>
+{% include 'customer/footer.html' %}

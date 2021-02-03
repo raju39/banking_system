@@ -1,0 +1,91 @@
+
+#login-page {
+   width: 500px;
+   padding-top: 50px;
+}
+#register-page {
+   width: 700px;
+   padding-top: 30px;
+}
+#reset-page{
+	width: 500px;
+   padding-top: 30px;
+
+}
+
+.login-form {
+    padding: 50px;
+    padding-top: 15px;
+}
+.wid-100{
+	width: 100%;
+}
+ #map {
+        height: 500px;
+        width: 100%;
+      }
+
+.dash-min-h{
+	min-height: 650px;
+}
+
+#funnel-wrap{
+margin: 0 auto;
+width: 900px;
+}
+
+tr th, tr td{ text-align: center; }
+.healthscore-height {
+    height: 600px;
+    overflow-x: scroll;
+}
+.btn-download{
+    background-color: #95A7FF;
+}
+.btn-download:hover{
+    background-color: #95CEFF;
+}
+.msg-info{
+  border-color: #0288d1;
+  background-color: #29b6f6;
+  color: white;
+  padding: 10px;
+border-radius: 4px;
+}
+.alert_close{
+cursor: pointer;
+}
+.ajs-header {
+    display: none;
+}
+.browse-file{
+  line-height: 54px!important;
+  height: auto!important;
+}
+.alertify .ajs-dialog {
+    border-radius: 5px;
+}
+.alertify .ajs-footer {
+    border-radius: 5px;
+}
+/*###############################*/
+
+#loader{
+display : none;
+    position : fixed;
+    z-index: 100;
+    background-image : url('../image/preload_waiting.gif');
+    background-color: #5e6bd2;;
+    opacity : .4;
+    background-repeat : no-repeat;
+    background-position : center;
+    left : 0;
+    bottom : 0;
+    right : 0;
+    top : 0;
+
+
+
+}
+
+

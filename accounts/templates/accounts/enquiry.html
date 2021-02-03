@@ -1,0 +1,29 @@
+{% load static %}
+{% include 'customer/header.html' %}
+<div class="container">
+    <p><strong>Total Amount: {{Total_amount}}</strong></p>
+    <p>Transaction Detail</p>
+<table>
+        <thead>
+          <tr>
+              <th>Account No</th>
+              <th>Amount</th>
+              <th>Transaction Type</th>
+              <th>date</th>
+          </tr>
+        </thead>
+        <tbody>
+         {% for record in data %}
+          <tr>
+            <td>{{record.account_no}}</td>
+            <td>Rs {{record.amount}}</td>
+            <td>{{record.tran_type}}</td>
+            <td>{{record.date}}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+
+</div>
+{% load static %}
+{% include 'customer/footer.html' %}

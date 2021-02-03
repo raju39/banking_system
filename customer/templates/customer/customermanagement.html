@@ -1,0 +1,82 @@
+{% load static %}
+{% include 'customer/header.html' %}
+<div class="container-fluid">
+    <div id="loader"></div>
+<div class="row">
+  <div class="col" style="min-height:550px;">
+    <div class="card-panel ">
+          <a href="#adduser" class="waves-effect waves-light btn-large modal-trigger"><i class="material-icons left">add</i>Create Accounts</a>
+          <p></p>
+      <table id="userlist" class="display">
+        <thead>
+            <tr>
+                <th>Account no</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>Profile type</th>
+                <th>Created date</th>
+                <th>Status</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ########  model add user  ######################## -->
+<div id="adduser" class="modal">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat right"><i class="material-icons">close</i></a>
+    <div class="modal-content">
+    <form id="addusersubmit_form">
+      <div class="row">
+        <div class="center-align">
+            <h5>Add user</h5>
+        </div>
+        {% csrf_token %}
+          <input type="hidden" name="id" value="{{id}}">
+        <div class="input-field col s6">
+          <input placeholder="First Name" id="first_name" name="first_name" type="text" class="validate" data-dj-validator="text,3,15" required>
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" name="last_name" placeholder="Last Name" type="text" class="validate" data-dj-validator="text,3,10" required>
+          <label for="last_name">Last Name</label>
+        </div>
+          <div class="input-field col s6">
+          <input id="amount" name="amount" placeholder="amount" type="number" class="validate" data-dj-validator="1,10000" required>
+          <label for="amount">Amount</label>
+        </div>
+          <div class="input-field col s12">
+            <input id="address" name="address" placeholder="Address" type="text"  required>
+            <label for="last_name">Address</label>
+          </div>
+        <div class="input-field col s12">
+          <input id="email" type="email" name="email" placeholder="email" class="validate" required="required">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" name="password" placeholder="password" class="validate" required="required" data-dj-validator="antext,3,15">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+                  <button class="btn waves-effect wid-100" type="submit" name="action">Submit
+                  </button>
+        </div>
+      </div>
+    </form>
+    </div>
+</div>
+
+
+      {% load static %}
+<script src="{% static 'customer/js/adduser.js' %}"></script>
+{% include 'customer/footer.html' %}

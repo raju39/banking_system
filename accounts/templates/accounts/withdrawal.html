@@ -1,0 +1,25 @@
+{% load static %}
+{% include 'customer/header.html' %}
+<div class="container">
+    <p><strong>Total Amount: {{Total_amount}}</strong></p>
+        <p><strong>{{title}}: {{withdraw}}</strong></p>
+
+ <form action="/account/withdraw" method="POST">
+      <div class="row">
+        {% csrf_token %}
+        <div class="input-field col s6">
+          <input placeholder="Inter withdraw amount" name="amount" type="number" class="validate" data-dj-validator="1,{{Total_amount}}" required>
+          <label for="Inter withdraw amount">Inter withdraw amount</label>
+        </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+                  <button class="btn waves-effect wid-100" type="submit" name="action">Submit
+                  </button>
+        </div>
+      </div>
+      </div>
+    </form>
+</div>
+{% load static %}
+{% include 'customer/footer.html' %}

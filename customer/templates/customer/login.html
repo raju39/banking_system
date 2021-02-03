@@ -1,0 +1,46 @@
+{% load static %}
+{% include 'customer/header.html' %}
+<div id="login-page" class="row">
+    <div class="col s12 z-depth-6 card-panel">
+      <form class="login-form" method="POST" action="/">
+      <div class="row">
+      	<div class="center-align" style="min-height: 40px;">
+            {% if messages %}
+            {% for message in messages %}
+            <div class="msg-info">{{ message }} <i class="material-icons right alert_close">clear</i></div>
+            {% endfor %}
+            {% endif %}
+      	</div>
+          {% csrf_token %}
+        <div class="input-field col s12">
+        	<i class="material-icons prefix">email</i>
+          <input id="email" type="email" name="email" class="validate" required="required">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+        	<i class="material-icons prefix">vpn_key</i>
+          <input id="password" type="password" name="password" class="validate" required="required">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <label>
+        <input type="checkbox" class="filled-in"/>
+        <span>Rememeber me</span>
+      </label>
+      <div class="row">
+        <div class="input-field col s12">
+				  <button class="btn waves-effect wid-100" type="submit" name="action">Login
+				  </button>
+        </div>
+      </div>
+      <div class="right">
+<!--				  	<a href="resetpass">Forgot Password?</a>-->
+			</div>
+      </form>
+    </div>
+</div>     
+
+
+{% include 'customer/footer.html' %}
